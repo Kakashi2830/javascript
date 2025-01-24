@@ -30,6 +30,8 @@ const myFunction=function(){
     console.log("Hello world");
 }
 
+
+
 //type of
 // Undefined => "undefined"
 //Null => "object"
@@ -39,3 +41,32 @@ const myFunction=function(){
 //objec(does not call/implement) => "object"
 //object(native or host and does implement) => "function"
 //object(host and does not implement)=>"boolean","number","string"
+
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Storage type
+//Stack(Primitive) Heap(Non Primitive)
+
+let myYoutubename="sagniknandidotcom"
+
+let anothername=myYoutubename
+anothername="wintersoldier"
+
+console.log(myYoutubename);
+console.log(anothername);
+
+let userOne={
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo=userOne
+
+userTwo.email="sagnik@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+
+

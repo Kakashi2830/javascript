@@ -54,3 +54,19 @@ form.addEventListener('submit',function(e){
 });
 
 ```
+
+## Third PROJECT
+[digital clock](https://stackblitz.com/edit/vitejs-vite-vhhypdep?file=index.html)
+
+```javascript
+const clock= document.getElementById('clock');
+//const clock=document.querySelector('#clock')
+
+setInterval(function(){
+  let date=new Date();
+  //console.log(date.toLocaleTimeString());
+  clock.innerHTML=date.toLocaleTimeString();
+},1000);
+
+```
+

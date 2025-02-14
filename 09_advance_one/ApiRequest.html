@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();//XMLHttpRequest object to make an asynchronous HTTP request to the GitHub API and retrieve information about a specific use,The XMLHttpRequest object is used to interact with servers. It can retrieve data from a URL without having to do a full page refresh.
+    xhr.open('GET', requestUrl)//The open() method initializes the request. It specifies the HTTP method (GET in this case) and the URL to which the request is sent.
+    xhr.onreadystatechange = function(){ //The onreadystatechange event handler is called whenever the readyState attribute changes.
+        console.log(xhr.readyState);//the readyState property indicates the state of the request:
+
+//0: UNSENT (open() not called yet)
+
+//1: OPENED (open() has been called)
+
+//2: HEADERS_RECEIVED (send() has been called, and headers and status are available)
+
+//3: LOADING (Downloading; responseText holds partial data)
+
+//4: DONE (The operation is complete)
+
+//When readyState is 4, the request is complete, and the response is available.
+
+//The responseText property contains the response data as a string. Here, it is parsed into a JavaScript object using JSON.parse().
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)//The responseText property contains the response data as a string. Here, it is parsed into a JavaScript object using JSON.parse().
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+    }
+    xhr.send();//The send() method sends the request to the server. For GET requests, no data is sent in the body, so the argument is omitted.
+</script>
+</html>
